@@ -1,0 +1,29 @@
+---
+- name: Configure Docker on EC2 Instances
+  hosts: all
+  become: true
+  connection: ssh
+
+  tasks:
+  - name: Update apt
+    apt:
+      update_cache: yes
+
+  - name: Install Docker
+    apt:
+      name: docker.io
+      state: present
+
+  - name: Start Docker Service
+    service:
+      name: docker
+      state: started
+      enabled: yes
+
+  - name: Deploy Docker Container
+    docker_container:
+      name: banking-project
+      image: sumrus/banking-project:1.0
+      ports:
+        - "8091:8064"
+      state: started
