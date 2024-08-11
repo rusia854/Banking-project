@@ -1,12 +1,12 @@
 pipeline{
     agent any
     stages{
-        stage('Checkout'){
-            steps{
-                 git url: 'https://github.com/rusia854/Banking-project.git'
-                 echo 'github url checkout'
-            }
-        }
+        //stage('Checkout'){
+          //  steps{
+            //     git url: 'https://github.com/rusia854/Banking-project.git'
+              //   echo 'github url checkout'
+           // }
+       // }
         stage('Compile'){
             steps{
                 echo 'starting compiling'
