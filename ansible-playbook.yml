@@ -25,5 +25,5 @@
       name: banking-project
       image: sumrus/banking-project:1.0
       ports:
-        - "8091:8064"
+        - "8064:8091"
       state: started
