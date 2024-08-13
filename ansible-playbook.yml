@@ -27,3 +27,9 @@
       ports:
         - "8064:8091"
       state: started
+
+  - name: Change into Node Exporter directory
+    command: cd node_exporter-*.*-amd64
+
+  - name: Run Node Exporter
+    command: ./node_exporter
